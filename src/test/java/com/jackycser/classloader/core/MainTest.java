@@ -8,14 +8,10 @@ import java.lang.reflect.Method;
  */
 public class MainTest {
     public static void main(String[] args) {
-        ClassLoader loader = MainTest.class.getClassLoader();
-        while (loader != null) {
-            System.out.println(loader.toString());
-            loader = loader.getParent();
-        }
+        testClassIdentity();
     }
 
-    public void testClassIdentity() {
+    public static void testClassIdentity() {
         String classDataRootPath = "C:\\workspace\\Classloader\\classData";
         FileSystemClassLoader fscl1 = new FileSystemClassLoader(classDataRootPath);
         FileSystemClassLoader fscl2 = new FileSystemClassLoader(classDataRootPath);
@@ -29,6 +25,14 @@ public class MainTest {
             setSampleMethod.invoke(obj1, obj2);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void printClassLoader() {
+        ClassLoader loader = MainTest.class.getClassLoader();
+        while (loader != null) {
+            System.out.println(loader.toString());
+            loader = loader.getParent();
         }
     }
 
