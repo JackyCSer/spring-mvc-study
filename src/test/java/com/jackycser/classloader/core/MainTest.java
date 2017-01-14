@@ -9,16 +9,17 @@ import java.lang.reflect.Method;
  * @since 13/01/2017
  */
 public class MainTest {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        System.out.println(Thread.currentThread().getContextClassLoader());
     }
 
     @Test
     public void testClassIdentity() {
-        String classDataRootPath = "C:\\workspace\\Classloader\\classData";
+        String classDataRootPath = "/Users/Jacky/Projects/GitHub/spring-mvc-study/target/classes";
         FileSystemClassLoader fscl1 = new FileSystemClassLoader(classDataRootPath);
         FileSystemClassLoader fscl2 = new FileSystemClassLoader(classDataRootPath);
-        String className = "com.example.Sample";
+        String className = "com.jackycser.classloader.core.Sample";
         try {
             Class<?> class1 = fscl1.loadClass(className);
             Object obj1 = class1.newInstance();
