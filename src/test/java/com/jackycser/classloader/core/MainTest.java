@@ -1,5 +1,7 @@
 package com.jackycser.classloader.core;
 
+import org.junit.Test;
+
 import java.lang.reflect.Method;
 
 /**
@@ -8,10 +10,11 @@ import java.lang.reflect.Method;
  */
 public class MainTest {
     public static void main(String[] args) {
-        testClassIdentity();
+
     }
 
-    public static void testClassIdentity() {
+    @Test
+    public void testClassIdentity() {
         String classDataRootPath = "C:\\workspace\\Classloader\\classData";
         FileSystemClassLoader fscl1 = new FileSystemClassLoader(classDataRootPath);
         FileSystemClassLoader fscl2 = new FileSystemClassLoader(classDataRootPath);
@@ -28,7 +31,8 @@ public class MainTest {
         }
     }
 
-    public static void printClassLoader() {
+    @Test
+    public void printClassLoader() {
         ClassLoader loader = MainTest.class.getClassLoader();
         while (loader != null) {
             System.out.println(loader.toString());
