@@ -1,4 +1,4 @@
-package com.jackycser.classloader.core;
+package com.jackycser.springmvc.classloader;
 
 /**
  * @author Jacky Zhang

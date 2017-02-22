@@ -1,4 +1,4 @@
-package com.jackycser.classloader.core;
+package com.jackycser.springmvc.classloader;
 
 import org.junit.Test;
 
@@ -19,7 +19,7 @@ public class MainTest {
         String classDataRootPath = "/Users/Jacky/Projects/GitHub/spring-mvc-study/target/classes";
         FileSystemClassLoader fscl1 = new FileSystemClassLoader(classDataRootPath);
         FileSystemClassLoader fscl2 = new FileSystemClassLoader(classDataRootPath);
-        String className = "com.jackycser.classloader.core.Sample";
+        String className = "Sample";
         try {
             Class<?> class1 = fscl1.loadClass(className);
             Object obj1 = class1.newInstance();

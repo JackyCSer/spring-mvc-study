@@ -1,4 +1,4 @@
-package com.jackycser.classloader.core;
+package com.jackycser.springmvc.classloader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
